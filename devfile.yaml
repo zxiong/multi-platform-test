@@ -1,18 +1,21 @@
 schemaVersion: 2.2.0
 metadata:
   name: go
-  language: go
-  projectType: go
+  displayName: Go Runtime
+  description: 'Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.'
+  icon: https://raw.githubusercontent.com/devfile-samples/devfile-stack-icons/main/golang.svg
+  language: Go
+  projectType: Go
   tags:
     - Go
-  version: 1.0.0
+  version: 1.0.1
   provider: Red Hat
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
   attributes:
     alpha.dockerimage-port: 8081
 parent:
   id: go
-  registryUrl: "https://registry.devfile.io"
+  registryUrl: 'https://registry.devfile.io'
 components:
   - name: outerloop-build
     image:
@@ -24,7 +27,7 @@ components:
   - name: outerloop-deploy
     attributes:
       deployment/replicas: 1
-      deployment/cpuLimit: "100m"
+      deployment/cpuLimit: '100m'
       deployment/cpuRequest: 10m
       deployment/memoryLimit: 100Mi
       deployment/memoryRequest: 10Mi
