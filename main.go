@@ -1,10 +1,11 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"net/http"
-	"flag"
 )
+
 var port = flag.Int("p", 8080, "server port")
 
 func main() {
@@ -14,5 +15,10 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+	path := r.URL.Path[1:]
+	if path != "" {
+		fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+	} else {
+		fmt.Fprint(w, "Hello World!")
+	}
 }
