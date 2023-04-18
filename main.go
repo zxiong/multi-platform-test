@@ -1,17 +1,19 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"net/http"
+	"os"
 )
 
-var port = flag.Int("p", 8080, "server port")
+var port = os.Getenv("PORT")
 
 func main() {
-	flag.Parse()
+	if port == "" {
+		port = "8080"
+	}
 	http.HandleFunc("/", HelloServer)
-	http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", *port), nil)
+	http.ListenAndServe(fmt.Sprintf("0.0.0.0:%s", port), nil)
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
