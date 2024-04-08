@@ -22,7 +22,7 @@ spec:
   - name: git-url
     value: '{{repo_url}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/test-rhtap-51-tenant/multi-platform-test/multi-platform-test:{{revision}}
+    value: quay.io/redhat-user-workloads-stage/test-rhtap-51-tenant/multi-platform-test/multi-platform-test:{{revision}}
   - name: path-context
     value: .
   - name: revision
