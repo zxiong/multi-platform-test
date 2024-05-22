@@ -10,10 +10,10 @@ metadata:
     pipelinesascode.tekton.dev/on-target-branch: '[main]'
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: multi-platform-test
-    appstudio.openshift.io/component: multi-platform-test
+    appstudio.openshift.io/application: APPLICATION
+    appstudio.openshift.io/component: COMPONENT
     pipelines.appstudio.openshift.io/type: build
-  name: multi-platform-test-on-push
+  name: COMPONENT-on-push
   namespace: NAMESPACE
 spec:
   params:
@@ -22,7 +22,7 @@ spec:
   - name: git-url
     value: '{{repo_url}}'
   - name: output-image
-    value: quay.io/QUAY_REPO/NAMESPACE/multi-platform-test/multi-platform-test:{{revision}}
+    value: quay.io/QUAY_REPO/NAMESPACE/APPLICATION/COMPONENT:{{revision}}
   - name: path-context
     value: .
   - name: revision
