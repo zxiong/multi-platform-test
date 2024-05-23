@@ -13,7 +13,7 @@ metadata:
     appstudio.openshift.io/application: APPLICATION
     appstudio.openshift.io/component: COMPONENT
     pipelines.appstudio.openshift.io/type: build
-  name: COMPONENT-on-push
+  name: multi-platform-test-on-push
   namespace: NAMESPACE
 spec:
   params:
